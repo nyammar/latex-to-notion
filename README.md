@@ -214,4 +214,4 @@ pytest --cov=latex2notion
 
 ## License
 
-A license has not been selected yet. Choose and add one before publishing this repository.
+Licensed under the [MIT License](LICENSE).
