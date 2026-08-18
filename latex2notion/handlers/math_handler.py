@@ -22,12 +22,13 @@ class MathHandler:
             Notion-compatible math string
         """
         if node.node_type == NodeType.MATH_INLINE:
-            # Notion inline equation format - use \( \) delimiters
-            # This is the standard LaTeX inline math syntax that Notion recognizes
-            return f"\\({node.content}\\)"
+            # Notion inline equation format - use $$...$$ (KaTeX format)
+            # Notion recognizes $$...$$ for inline math equations
+            return f"$${node.content}$$"
         elif node.node_type == NodeType.MATH_DISPLAY:
-            # Notion display math - use \[ \] for block equations
-            return f"\\[\n{node.content}\n\\]"
+            # Notion display math - use $$...$$ for block equations
+            # For display math, we use $$...$$ on separate lines
+            return f"$$\n{node.content}\n$$"
         else:
             return ""
     

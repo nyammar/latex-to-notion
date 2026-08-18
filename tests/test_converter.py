@@ -26,7 +26,7 @@ class TestConverter:
         """Test inline math conversion"""
         latex = "The value is $x^2 + y^2$."
         result = convert(latex)
-        assert "\\(x^2 + y^2\\)" in result
+        assert "$$x^2 + y^2$$" in result
     
     def test_display_math(self):
         """Test display math conversion"""
@@ -129,7 +129,7 @@ Paragraph with $x^2$ math.
 """
         result = convert(latex)
         assert "# Title" in result
-        assert "\\(x^2\\)" in result
+        assert "$$x^2$$" in result
         assert "**bold**" in result
     
     def test_heading_level_offset(self):
@@ -217,7 +217,7 @@ Important note here.
         assert "# Introduction" in result
         assert "## Related Work" in result
         assert "# Methodology" in result
-        assert "\\(E = mc^2\\)" in result or "E = mc^2" in result
+        assert "$$E = mc^2$$" in result or "E = mc^2" in result
         assert "> 💡" in result
 
 

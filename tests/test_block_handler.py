@@ -89,7 +89,7 @@ class TestBlockHandler:
         math_node = ASTNode(NodeType.MATH_INLINE, content="x^2")
         node.children = [ASTNode(NodeType.TEXT, content="The value is "), math_node]
         result = handler.convert_paragraph(node, inline_handler)
-        assert "\\(x^2\\)" in result
+        assert "$$x^2$$" in result
     
     def test_multiple_heading_levels(self):
         """Test multiple heading levels in sequence"""

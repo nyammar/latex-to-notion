@@ -93,7 +93,7 @@ class TestListHandler:
         node.children = [item1]
         
         result = handler.convert(node)
-        assert "\\(x^2\\)" in result
+        assert "$$x^2$$" in result
     
     def test_mixed_nested_lists(self):
         """Test mixed nested lists (itemize within enumerate)"""
